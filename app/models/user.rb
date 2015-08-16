@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :technicians
+  has_one :ad
+
   enum role: [:guest, :user, :technician, :admin]
 
   before_save :default_role
