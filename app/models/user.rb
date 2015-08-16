@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:guest, :user, :technician, :admin]
+
+  before_save :default_role
+
+  def default_role
+  	self.role ||= 1
+  end
 end
