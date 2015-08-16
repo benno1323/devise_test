@@ -9,6 +9,7 @@ class Ability
       can :manage, :all
     elsif user.technician?
       can :create, Ad
+      can :read, Ad
       can [:update, :destroy], Ad, user_id: user.id
     else
       can :read, :all
