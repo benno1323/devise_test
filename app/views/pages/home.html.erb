@@ -1,6 +1,18 @@
 <h2>Home Page</h2>
 
 <% if user_signed_in? %>
+	<%= current_user.email %>
+	<br>
+	<%= current_user.role %>
+<% end %>
+
+<h3>Sign Up Technicians</h3>
+<p><%= link_to "Sign Up", new_technician_registration_path %></p>
+
+<h3>Sign Up Members</h3>
+<p><%= link_to "Sign Up", new_user_registration_path %></p>
+
+<% if user_signed_in? %>
   <p>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   </p>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, class_name: 'User'
-  devise_for :technicians, controllers: { registrations: 'registrations' }, class_name: 'Technician'
+  devise_for :technicians, class_name: 'Technician'
   resources :ads
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
